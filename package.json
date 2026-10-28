@@ -1,0 +1,46 @@
+{
+  "name": "vector-lab-144",
+  "version": "0.1.0",
+  "description": "CLI-Anything: Making ALL Software Agent-Native - Core CLI Generation from Source Code",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.ts",
+    "generate": "ts-node src/cli/generate.ts"
+  },
+  "keywords": [
+    "cli",
+    "generator",
+    "electron",
+    "typescript",
+    "ast",
+    "code-analysis"
+  ],
+  "author": "Alan Vo <alanvo@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "typescript": "^5.4.0",
+    "ts-morph": "^21.0.0",
+    "glob": "^10.3.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
