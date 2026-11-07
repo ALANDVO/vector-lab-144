@@ -49,3 +49,6 @@ Acceptance:
 - Support subcommands, options, arguments, and validation
 - Generate TypeScript definitions for type-safe invocation
 
+---
+
+Alan Vo · [alanvo.net](https://alanvo.net)

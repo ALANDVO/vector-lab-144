@@ -65,3 +65,7 @@ Quits the application
 ```bash
 npm run dev -- <command> [options]
 ```
+
+---
+
+Alan Vo · [alanvo.net](https://alanvo.net)
