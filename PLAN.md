@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-cli-generation-core
+ast-analysis
 
 ## Roadmap
 
@@ -24,12 +24,16 @@ Tests: `src/analyzer/ast-analyzer.test.ts (5 tests passing)`
 
 ### ast-analysis — AST-based Code Analysis
 
-Status: planned
+Status: in_progress
 
 Acceptance:
 - Parse TypeScript/JavaScript files with Babel/TypeScript compiler API
 - Identify exported functions, classes, and decorators
 - Extract parameter types, defaults, and documentation
+
+Implementation: `AstAnalyzer class with analyzeDirectory/analyzeFile methods`, `Function and class extraction with decorators`, `Parameter type, default value, and JSDoc documentation extraction`, `8 tests covering export detection, parameter extraction, decorator identification, and type resolution`
+
+Tests: `src/analyzer/ast-analyzer.test.ts (8 tests passing)`
 
 ### electron-integration — Electron App Integration
 

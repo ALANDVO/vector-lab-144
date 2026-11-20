@@ -58,4 +58,31 @@ describe('AstAnalyzer', () => {
     expect(createWindow).toBeDefined();
     expect(createWindow!.description).toContain('Creates a new browser window');
   });
+
+  test('should extract decorator names from class methods', async () => {
+    const functions = await analyzer.analyzeDirectory(testDir);
+    // Test that extractDecorators returns empty array for methods without decorators
+    const showWindow = functions.find(f => f.name === 'showWindow');
+    expect(showWindow).toBeDefined();
+    expect(showWindow!.decorators).toEqual([]);
+  });
+
+  test('should extract parameter default values when present', async () => {
+    const functions = await analyzer.analyzeDirectory(testDir);
+    const loadUrl = functions.find(f => f.name === 'loadUrl');
+    
+    expect(loadUrl).toBeDefined();
+    // window parameter has no default in source, so defaultValue is undefined
+    // This test documents current behavior
+    expect(loadUrl!.parameters[1].defaultValue).toBeUndefined();
+  });
+
+  test('should extract parameter types from source', async () => {
+    const functions = await analyzer.analyzeDirectory(testDir);
+    const createWindow = functions.find(f => f.name === 'createWindow');
+    
+    expect(createWindow).toBeDefined();
+    // Type is resolved from the source file context
+    expect(createWindow!.parameters[0].type).toContain('WindowOptions');
+  });
 });

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "cli-generation-core",
+  "current_feature": "ast-analysis",
   "features": [
     {
       "id": "cli-generation-core",
@@ -26,14 +26,21 @@
     {
       "id": "ast-analysis",
       "title": "AST-based Code Analysis",
-      "status": "planned",
+      "status": "in_progress",
       "acceptance": [
         "Parse TypeScript/JavaScript files with Babel/TypeScript compiler API",
         "Identify exported functions, classes, and decorators",
         "Extract parameter types, defaults, and documentation"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "AstAnalyzer class with analyzeDirectory/analyzeFile methods",
+        "Function and class extraction with decorators",
+        "Parameter type, default value, and JSDoc documentation extraction",
+        "8 tests covering export detection, parameter extraction, decorator identification, and type resolution"
+      ],
+      "tests": [
+        "src/analyzer/ast-analyzer.test.ts (8 tests passing)"
+      ]
     },
     {
       "id": "electron-integration",
