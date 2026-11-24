@@ -24,7 +24,7 @@ Tests: `src/analyzer/ast-analyzer.test.ts (5 tests passing)`
 
 ### ast-analysis — AST-based Code Analysis
 
-Status: in_progress
+Status: done
 
 Acceptance:
 - Parse TypeScript/JavaScript files with Babel/TypeScript compiler API
